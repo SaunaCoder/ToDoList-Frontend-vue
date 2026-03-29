@@ -39,21 +39,62 @@ const submit = async () => {
 </script>
 
 <template>
-  <div>
-    <h2>Register</h2>
-
-    <input v-model="email" placeholder="Email" />
-    <input v-model="firstName" placeholder="First Name" />
-    <input v-model="lastName" placeholder="Last Name" />
-    <input v-model="password" type="password" placeholder="Password" />
-    <input
-      v-model="confirmPassword"
-      type="password"
-      placeholder="Confirm Password"
-    />
-
-    <button @click="submit">Register</button>
-
-    <p v-if="error" style="color: red">{{ error }}</p>
+  <div class="container">
+    <div class="d-flex justify-content-center align-items-center vh-100">
+      <div class="card shadow p-4" style="width: 100%; max-width: 400px;">
+        <h3 class="text-center mb-4">Register</h3>
+        <form @submit.prevent="submit">
+          <div class="mb-3 text-start">
+            <input 
+              v-model="email"
+              type="email"
+              class="form-control"
+              placeholder="Enter email"
+              required
+            />
+          </div>
+          <div class="mb-3 text-start">
+            <input 
+              v-model="firstName"
+              type="text"
+              class="form-control"
+              placeholder="Enter first name"
+              required
+            />
+          </div>
+          <div class="mb-3 text-start">
+            <input 
+              v-model="lastName"
+              type="text"
+              class="form-control"
+              placeholder="Enter last name"
+            />
+          </div>
+          <div class="mb-3 text-start">
+            <input 
+              v-model="password"
+              type="password"
+              class="form-control"
+              placeholder="Enter password"
+              required
+            />
+          </div>
+          <div class="mb-3 text-start">
+            <input 
+              v-model="confirmPassword"
+              type="password"
+              class="form-control"
+              placeholder="Confirm password"
+              required
+            />
+          </div>
+          <button @click="submit" class="mb-3 btn btn-primary w-100">
+            Register
+          </button>
+          <p v-if="error" style="color: red">{{ error }}</p>
+          <a href="" @click="$router.push('/login')">Already have an account? Login</a>
+        </form>
+      </div>
+    </div>
   </div>
 </template>
