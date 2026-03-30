@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
-import TodoLists from "../views/TodoLists.vue";
+import TodoLists from "../views/ToDoLists.vue";
 import { useAuthStore } from "../stores/auth";
 
 const routes = [
